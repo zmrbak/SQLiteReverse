@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="28">
+  <Forms>
+    <CETrainer Class="TTrainerForm" Encoding="Ascii85">g.UFJ)=ArR,KrzTj{1aXLM,R!;K9/UE^O:S6.H*u#l*UAR.HfFnY4u!QbCovV1/f:DzQVTqDTl/Jj9v;3(f(7K,_?_Cou6iiBsCL@4ys?:bn3x:ldi8)4U]}f-psKg421LF6*k*SCdt_$mC0tN+TvXO)y;VGNf)!H7MPQBi58{OsEcOvzR8z2sGu87$/B9F-1K?c!?*32dhT+.fG.M@JypU*2Qd#Gze3S6Nf]@3QXv?L7T+k7kc3OZry?jJ/{yc/Fce(l}e+i/1im3m;BL_Shswu:2is:oC1nU7KxV/RY9bG(#;[dCY6NGqw0.7DqY1Xj;N9lWn.T%4J/[)L:7+Ea4Jmzoy*SjjM2ojY.OVD3lMrWAxz4JNmnwDe,]5@$c1T$+px$.HLJ@L5I?5D)0pb8;4*E,o?Lf?J5_GK(?L0!4%-7@OJx{=.Zo)cb/-VhEdLaaNdGn#1E}Q@F$/eIC;rdPT=-Zrj!!mN-UG,@(iqmKz)}22wX32ACT7]#x7;SG%O3PI2EJX*,8Md{%Oi6R*[0GdzcYQ5a)0IjnrdLgcwx;BoO.EF6_YvHjs8o!zxnEL^p(H;Lc(hf3+2JD!Fa,y1[^rqRuVR8,A%fM5+dS2LOy!2I_^k+eu@P0JR+#kk[9t!qDj,vCR.#t]gdy[s6*KQ!u{Yl9,Ek^h]NO7ZWOas?gpl]%3AoLBF*d5bGQ=xvCwsOy0@V@z4z@L?8jodhZ^Tln^RsWHx9mR9X?(4,kR@Z7_9.r]2sN8xvyIxi(qfCk#.@]?-v}M6p{iBbU}A?3KHEYqfTFvP1iJ(uetiL*!,r68}g/</CETrainer>
+  </Forms>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"自动汇编脚本"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+mov eax,[000AA138]
+add eax,1
+jmp exit
+
+originalcode:
+mov eax,[000AA138]
+
+exit:
+jmp returnhere
+
+"REV_L01.exe"+1177D:
+jmp newmem
+returnhere:
+
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"REV_L01.exe"+1177D:
+mov eax,[000AA138]
+//Alt: db A1 38 A1 0A 00
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>113</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>--TRAINERGENERATORSTART--
+--这是自动生成的代码. 请在此区域内个修改代码
+--如果你更新了修改器代码，将被删除并重新写入
+
+--Uncomment the following line if this is a Cheat Table format trainer and you don't want CE to show (Tip, save as .CETRAINER alternatively)
+--hideAllCEWindows()
+
+RequiredCEVersion=6.83
+if (getCEVersion==nil) or (getCEVersion()&lt;RequiredCEVersion) then
+  messageDialog('Please install Cheat Engine '..RequiredCEVersion, mtError, mbOK)
+  closeCE()
+end
+addresslist=getAddressList()
+memrec0=addresslist.getMemoryRecordByID(0)
+
+memrec0_hotkey0=memrec0.getHotkeyByID(0)
+
+function onPostHotkey0(Hotkey)
+  --Executed after the "toggle*" cheat got executed
+  local memrec=Hotkey.Owner
+  local isActive=memrec.Active --get the state after the hotkey got triggered
+  CETrainer.CHEAT0.setActive(isActive) --gui update, nothing else
+  if gPlaySoundOnAction then
+    if isActive then
+      playSound(gActivateSound)
+    else
+      playSound(gDeactivateSound)
+    end
+  end
+end
+
+memrec0_hotkey0.onPostHotkey=onPostHotkey0
+
+CETrainer.SEPERATOR.Visible=false
+
+getAutoAttachList().add("REV_L01.exe")
+gPlaySoundOnAction=false
+CETrainer.show()
+function AboutClick()
+  showMessage(gAboutText)
+end
+gAboutText=[[This trainer was made by Cheat 
+Engine
+www.cheatengine.org]]
+
+function CloseClick()
+  --called by the close button onClick event, and when closing the form
+  closeCE()
+  return caFree --onClick doesn't care, but onClose would like a result
+end
+
+--TRAINERGENERATORSTOP--
+</LuaScript>
+</CheatTable>
