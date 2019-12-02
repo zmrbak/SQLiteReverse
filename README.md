@@ -16,12 +16,15 @@ SQLite数据库加密了，怎么办？
 
 # 示例图片
 
+<li><img src="https://raw.githubusercontent.com/zmrbak/SQLiteReverse/master/%E7%A4%BA%E4%BE%8B%E5%9B%BE%E7%89%87/VWS5Q(C%60MFE%5D8GUGS%60D4TMB.png"><br/>
 
 
 # 交流
 
-QQ群：831482711
+QQ群：456197310
 
 # 学员评价
 
+<li><img src="https://raw.githubusercontent.com/zmrbak/SQLiteReverse/master/%E5%AD%A6%E5%91%98%E8%AF%84%E4%BB%B7/3BFEB9D9EE6025F0B74D69864272B88D.jpg"><br/>
+<li><img src="https://raw.githubusercontent.com/zmrbak/SQLiteReverse/master/%E5%AD%A6%E5%91%98%E8%AF%84%E4%BB%B7/708F9E8CD676394F60ECCC653CC50BE7.jpg"><br/>
 
