@@ -1,8 +1,8 @@
-# 云课堂《SQLite数据库逆向分析》示例代码
+# 腾讯课堂《SQLite数据库逆向分析》示例代码
 
 
 
-网易云课堂：<a href="http://t.cn/AigE0KYQ">http://t.cn/AigE0KYQ</a> <br/>
+腾讯课堂：<a href="https://ke.qq.com/course/476232">https://ke.qq.com/course/476232</a> <br/>
 
 
 
